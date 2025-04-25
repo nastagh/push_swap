@@ -86,7 +86,6 @@ static void	assign_indexes(t_stack *stack)
 // sort array bubble_sort
 // write index to t_node
 
-
 int	init_stack(t_stack *stack, int argc, char **argv)
 {
 	int		i;
@@ -114,4 +113,5 @@ int	init_stack(t_stack *stack, int argc, char **argv)
 // Converts the input from strings into integers
 // Checks for invalid input (letters, symbols)
 // Creates a linked list of nodes (each holding a number)
-// Also assigns each number an index — its position in the sorted array (bubble sort)
+// Also assigns each number an index — its position in the sorted array 
+//(bubble sort)
