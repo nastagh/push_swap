@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amikhail <amikhail@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/26 15:00:58 by amikhail          #+#    #+#             */
+/*   Updated: 2025/04/30 13:58:11 by amikhail         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static t_node	*new_node(int value)
@@ -95,7 +107,7 @@ int	init_stack(t_stack *stack, int argc, char **argv)
 	stack->top = NULL;
 	stack->size = 0;
 	i = argc - 1;
-	while (i > 0)
+	while (i >= 0)
 	{
 		if (!parse_int(argv[i], &value))
 			return (0);

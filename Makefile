@@ -2,6 +2,9 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
+LIBFT_PATH = ./libft
+LIBFT = $(LIBFT_PATH)/libft.a
+
 SRCS = push_swap.c \
        stack/stack_utils.c \
        stack/stack_checks.c \
@@ -21,14 +24,18 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+
+$(LIBFT):
+	make -C $(LIBFT_PATH)
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
+	make -C $(LIBFT_PATH) fclean
 
 re: fclean all
 

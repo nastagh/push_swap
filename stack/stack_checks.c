@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_checks.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amikhail <amikhail@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/26 15:00:55 by amikhail          #+#    #+#             */
+/*   Updated: 2025/04/30 13:54:17 by amikhail         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	init_stack_empty(t_stack *stack)
@@ -21,14 +33,14 @@ void	free_stack(t_stack *stack)
 
 int	is_sorted(t_stack *stack)
 {
-	t_node	*current;
+	t_node	*cur;
 
-	current = stack->top;
-	while (current && current->next)
+	cur = stack->top;
+	while (cur && cur->next)
 	{
-		if (current->value > current->next->value)
+		if (cur->index > cur->next->index)
 			return (0);
-		current = current->next;
+		cur = cur->next;
 	}
 	return (1);
 }
